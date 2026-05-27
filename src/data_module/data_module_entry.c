@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "data_process.h"
 #include "data_io.h"
+#include "data_process.h"
 
 int main() {
-    double *data = NULL;
+    double* data = NULL;
     int n;
 
     if (scanf("%d", &n) != 1 || n <= 0) {

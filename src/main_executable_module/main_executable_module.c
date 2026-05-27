@@ -6,22 +6,19 @@
 #include "data_stat.h"
 #include "decision.h"
 
-int main(void)
-{
-    double *data = NULL;
+int main(void) {
+    double* data = NULL;
     int n;
 
     printf("LOAD DATA...\n");
 
-    if (scanf("%d", &n) != 1 || n <= 0)
-    {
+    if (scanf("%d", &n) != 1 || n <= 0) {
         printf("n/a");
         return 1;
     }
 
     data = malloc(n * sizeof(double));
-    if (!data)
-    {
+    if (!data) {
         printf("n/a");
         return 1;
     }
@@ -32,12 +29,9 @@ int main(void)
     output(data, n);
 
     printf("\nNORMALIZED DATA:\n\t");
-    if (normalization(data, n))
-    {
+    if (normalization(data, n)) {
         output(data, n);
-    }
-    else
-    {
+    } else {
         printf("ERROR");
         free(data);
         return 1;
