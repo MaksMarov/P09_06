@@ -22,7 +22,6 @@ DATA_PROCESS_SO = $(BUILD_DIR)/data_process.so
 
 all: build_with_dynamic
 
-# ---------------- STATIC PART ----------------
 build_with_dynamic: data_process.so
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) \
@@ -34,7 +33,6 @@ build_with_dynamic: data_process.so
 	-L$(BUILD_DIR) -ldata_process \
 	-o $(TARGET) $(LDFLAGS)
 
-# ---------------- SO BUILD ----------------
 data_process.so:
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -fPIC -c $(DATA_PROCESS) -o $(BUILD_DIR)/data_process.o
